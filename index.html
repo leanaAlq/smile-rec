@@ -41,8 +41,7 @@
 
           // Request headers.
           beforeSend: function(xhrObj) {
-            xhrObj.setRequestHeader("Content-Type", "application/octet-stream");
-            xhrObj.setRequestHeader("encoding", "base64");
+            xhrObj.setRequestHeader("Content-Type", "application/json");
             xhrObj.setRequestHeader(
               "Ocp-Apim-Subscription-Key",
               subscriptionKey
@@ -52,7 +51,7 @@
           type: "POST",
 
           // Request body.
-          data: `[${sourceImageUrl}]`
+          data: '{"url": ' + '"' + sourceImageUrl + '"}'
         })
 
           .done(function(data) {
