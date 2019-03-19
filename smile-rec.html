@@ -42,6 +42,7 @@
           // Request headers.
           beforeSend: function(xhrObj) {
             xhrObj.setRequestHeader("Content-Type", "application/octet-stream");
+            xhrObj.setRequestHeader("encoding", "base64");
             xhrObj.setRequestHeader(
               "Ocp-Apim-Subscription-Key",
               subscriptionKey
